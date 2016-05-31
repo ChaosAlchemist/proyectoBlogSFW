@@ -1,0 +1,36 @@
+Url....		Posibles salidas
+
+//Documentacion_
+	-entradas = a la variable que sera devuelta por get,
+	-devolvera variables de tipo numericas
+	-por lo que sera evaluada por el id de la variable
+	
+	-TITULO = a la variable que mostrara o devolvera el titulo de la pagina
+			por un resultado STRING
+	-CUERPO = a la variable que mostrara o devolvera el cuerpo de la pagina 
+			en si lo que contiene dependiendo del dato que devuele (entradas)
+/*--------------------------------------------------------------------------------------------------*/
+
+	//Caso de uso:  Listar Entradas
+
+	//si la variable es "0" Significa que no hay entradas
+
+	index.php?entradas=0$TITULO=title&CUERPO=body
+
+	//Por lo que devolvera un error en el xml de que no hay entradas
+
+	//Significa que hay entradas por lo tanto las lista
+
+	index.php?entradas=1$TITULO=title&CUERPO=body
+
+	//Por lo que devolvera una lista o una tabla con las entradas
+
+
+	//significa que hay entradas con igual nombre
+
+	index.php?entradas=2$TITULO=title&CUERPO=body
+
+	//Significa que enviara un mensaje , mencionando que hay un post con el mismo titulo
+
+
+

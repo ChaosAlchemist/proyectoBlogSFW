@@ -1,0 +1,20 @@
+PARA VER TODAS LAS ENTRADAS
+url:		index.php?u=klawx3&pass=****&listar=true
+		//listar=true: para mostrar todos los blog
+
+salida XML:	
+<post>
+	<id> 3</id>
+	<comentario>.....</comentario>
+	<usuario> klawx3</usuario>
+	<fecha>.....</fecha>	
+<post/>
+
+<post>
+	<id> 3</id>
+	<comentario>.....</comentario>
+	<usuario> klawx3</usuario>
+	<fecha>.....</fecha>	
+<post/>
+..............................................
+	

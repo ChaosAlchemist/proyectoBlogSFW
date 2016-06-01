@@ -12,10 +12,18 @@ insert into permisos values(null, 'Estándar');
 
 create table usuarios(
 	id int auto_increment,
-	
+    nombreUsuario varchar(20),
+    clave varchar(15),	
     permiso int,
     foreign key(permiso) references permisos(id),
     primary key(id)
 );
 
-create table publicaciones();
+create table publicaciones(
+	id int auto_increment,
+    fecha date,
+    texto varchar(255),
+    idUsuario int,
+    foreign key(idUsuario) references usuarios(id),
+    primary key(id)
+);

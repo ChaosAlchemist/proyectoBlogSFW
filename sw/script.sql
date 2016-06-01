@@ -22,6 +22,7 @@ create table usuarios(
 create table publicaciones(
 	id int auto_increment,
     fecha date,
+    titulo varchar(25),
     texto varchar(255),
     idUsuario int,
     foreign key(idUsuario) references usuarios(id),

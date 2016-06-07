@@ -1,0 +1,37 @@
+Caso de Uso: "Eliminar Usuario".
+-----------------------------------------------------------------------------
+Parámetro/s: 
+
+id-> variable que identifica el id del usuario que será eliminado de la BD.
+idAdmin- variable que identifica el privilegio "Admin" de un usuario.
+pass: clave que ingresa el admin para poder eliminar un usuario
+-----------------------------------------------------------------------------
+
+URL: index.php/eliminarUsuario.php?id=$id
+
+-----------------------------------------------------------------------------
+
+//Caso 1: Usuario Eliminado
+
+XML:	<info>
+		<mensaje>'Usuario Eliminado con éxito'</mensaje>
+		<delete>true</delete>
+	</info>
+
+//Caso 2: Usuario no se encuentra
+XML: 	<info>
+		<mensaje>'Usuario inexistente'<mensaje/>
+		<delete>false<delete/>
+	<info/>
+
+//Caso 3: No existen privilegios Admin
+XML: 	<info>
+		<mensaje>'No posee los privilegios necesarios para realizar esta acción'<mensaje/>
+		<delete>false<delete/>
+	<info/>
+Caso 4: Uno o mas formularios vacios.
+
+XML: 	<info>
+		<mensaje>'Formulario enviado sin datos'<mensaje/>
+		<delete>false<delete/>
+	<info/>

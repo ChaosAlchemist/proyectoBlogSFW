@@ -1,0 +1,23 @@
+VALIDAR CUENTA
+user=nombre usuario ingrsado 
+pass=contraseña ingresada
+
+index.php?user=klawx3&pass=****
+
+//Caso1: Usuario correcto y clave correcta
+XML: 	<info>
+		<mensaje>'Usuario ingresado'<mensaje/>
+		<login>true<login/>
+	<info/>
+
+//Caso2: Usuario correcto pero clave incorrecta
+XML: 	<info>
+		<mensaje>'Clave usuario incorrecta'<mensaje/>
+		<login>false<login/>
+	<info/>
+
+//Case3: No se encuentra usuario en la bd.
+XML: 	<info>
+		<mensaje>'No se encuentra usuario'<mensaje/>
+		<login>false<login/>
+	<info/>

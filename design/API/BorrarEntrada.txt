@@ -6,12 +6,20 @@ identrada=Variable que indice el valor de la id de la entrada. Se debe indicar c
 index.php?user=klawx3&pass=****&identrada=4
 
 //Caso 1: Borrado Exitoso
-XML: 	<post>
-		
-	<post/>
+XML: 	<info>
+		<mensaje>'borrado exitoso'<mensaje/>
+		<estado>true<estado/>
+	<info/>
 
 
 //Caso 2: Entrada no se encuentra
-	
+XML: 	<info>
+		<mensaje>'entrada inexistente'<mensaje/>
+		<estado>false<estado/>
+	<info/>
 
 //Caso 3: No existen privilegios Admin
+XML: 	<info>
+		<mensaje>'No admin'<mensaje/>
+		<estado>false<estado/>
+	<info/>

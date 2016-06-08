@@ -7,14 +7,14 @@ index.php?user=klawx3&pass=****&identrada=4
 
 //Caso 1: Borrado Exitoso
 XML: 	<info>
-		<mensaje>'borrado exitoso'<mensaje/>
+		<mensaje>'Borrado exitoso'<mensaje/>
 		<estado>true<estado/>
 	<info/>
 
 
 //Caso 2: Entrada no se encuentra
 XML: 	<info>
-		<mensaje>'entrada inexistente'<mensaje/>
+		<mensaje>'Entrada inexistente'<mensaje/>
 		<estado>false<estado/>
 	<info/>
 

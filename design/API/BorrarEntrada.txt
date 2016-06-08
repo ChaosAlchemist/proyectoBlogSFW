@@ -1,33 +1,17 @@
 PARAMETROS
-u=Variable que especifica ingresar id usuario.  Se indicar con valores int.
-p=Variable que especifica para ingresar contraseña. Se debe indicar con valores string.
-e=Variable que indice el valor de la id de la entrada. Se debe indicar con valores int.
+user=Variable que especifica ingresar id usuario.  Se indicar con valores int.
+pass=Variable que especifica para ingresar contraseña. Se debe indicar con valores string.
+identrada=Variable que indice el valor de la id de la entrada. Se debe indicar con valores int.
 
-VARIABLES DE RETORNO
-del=Variable del tipo bit que especificará un valor 0 para false y 1 para true.
-	cuando es 0 : coresponde no se ha realizado accion
-	cuando es 1 : coresponde a que se ha realizado accion exitosamente
-ent=Variable del tipo bit que especificará un valor 0 para false y 1 para true.
-	cuando es 0 : coresponde no se ha encontrado entrada
-	cuando es 1 : coresponde a que se ha encontrado entrada
-adm=Variable del tipo bit que indica tipo de usuario
-	cuando es 0 : coresponde no se usuario especificado no tiene privilegios de administrador
-	cuando es 1 : coresponde a que usuario tiene privilegios de administrador
-
-index.php?u=&p=&e=&del=&ent=&adm=&user=&pass=
+index.php?user=klawx3&pass=****&identrada=4
 
 //Caso 1: Borrado Exitoso
-index.php?u=klawx3&p=****&e=13&del=1&ent=1&adm=1
---xml:  Despliege mensaje cambio exitosa. 	
-	Con un enlace para volver a la pagina anterior
+XML: 	<post>
+		
+	<post/>
+
 
 //Caso 2: Entrada no se encuentra
-index.php?u=klawx3&p=****&e=13&del=1&ent=0&adm=1
---xml: Despliegue mensaje de entrada inexistente
-	Con enlace para volver a especificar entrada	
+	
 
 //Caso 3: No existen privilegios Admin
-index.php?u=klawx3&p=****&e=13&del=1&ent=1&adm=0
-	Despliegue mensaje
-	Enlace para volver iniciar con otro usuario
-	Enlace para volver al home.

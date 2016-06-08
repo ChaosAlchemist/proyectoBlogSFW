@@ -24,11 +24,31 @@
 //	index.php?pbl=1
 //	xml: Muestra un mensaje de publicación exitosa.
 
+	<status>
+		<info>creado</info>
+	</status>
+
+
 //	index.php?pbl=0&error=1;
 //	xml: Muestra un mensaje que informa un título vacío o inválido.
 
+
+	<status>
+		<info>titulo inválido</info>
+	</status>
+
+
+
+
 //	index.php?pbl=0&error=2;
 //	xml: Redirige a la página de inicio de sesión.	
+
+
+	<status>
+		<info>acceso restringido</info>
+	</status>
+
+	
 
 
 	

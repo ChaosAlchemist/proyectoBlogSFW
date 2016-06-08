@@ -1,0 +1,21 @@
+--registrar usuarios normales--
+
+Documentacion
+	-registro=variable por la cual se sabe si el usuario existe o no
+	por true o false
+	-errorePass=variable para comprobar estado de clave
+	
+	-1 si la clave es muy corta
+	-3 si la clave no tiene ningun problema
+	
+
+index.php?registro=true
+//Significaria que el usuario existe por lo que no registra nada
+
+
+index.php?registro=false;
+//Signficaria que el usuatrio no existe por lo que lo registra
+
+index.php?registro=false:errorPass=0
+//significa que  la claves no coinciden
+

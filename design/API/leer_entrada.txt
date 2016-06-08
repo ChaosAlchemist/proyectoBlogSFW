@@ -1,0 +1,35 @@
+--Leer entradas--
+
+documentacion :
+	validar:variable para vr si existe una entrada la cual leer
+	leer:variable por la cual se sabe si esta leyendo por true o false
+
+
+---------------------------------------------------------
+index.php?variable=0
+xml:significa que no existe una entrada
+
+<status>
+	<info>No existe entrada</info>
+</status>
+
+index.php?variable=1
+xml:significa que si existe una entrada
+
+<status>
+	<info>existe entrada</info>
+</status>
+
+index.php?variable=1&leer=false
+xml:significa que no se esta leyendo el post
+
+<status>
+	<info>no leyendo/info>
+</status>
+
+index.php?variable=1&leer=true
+xml:significa que si se esta leyendo el post
+
+<status>
+	<info>leyendo/info>
+</status>

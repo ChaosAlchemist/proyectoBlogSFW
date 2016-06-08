@@ -1,4 +1,7 @@
-create database db_proyectoSoft;
+create database db_proyectoSoft
+	default character set utf8
+    default collate utf8_general_ci;
+	
 use db_proyectoSoft;
 
 create table permisos(

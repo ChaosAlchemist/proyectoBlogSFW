@@ -19,3 +19,8 @@ index.php?registro=false;
 index.php?registro=false:errorPass=0
 //significa que  la claves no coinciden
 
+index.php?registro=false:errorPass=1
+//significa que  la claves si coinciden
+
+index.php?registro=false:errorPass=2
+//significa que que la clave es muy corta einsegura

@@ -1,16 +1,21 @@
 //	Caso de Uso: Escribir una entrada al blog
 
 // 	Documentación:
+//	-------------------------------------------------------------------
 
 // 	u = nombre de Usuario
 // 	p = contraseña del usuario
 // 	t = título de la entrada
 // 	c = cuerpo de la entrada
 
-	index.php?u=USUARIO&p=CLAVE&t=""&c="";
+	index.php?u=$USUARIO&p=$CLAVE&t=""&c="";
+
+//	-------------------------------------------------------------------
+//	-------------------------------------------------------------------
 
 
-	POSIBLES SALIDAS:
+//	POSIBLES SALIDAS:
+//	-------------------------------------------------------------------
 
 	
 //	pbl = retorna el estado de la publicación.

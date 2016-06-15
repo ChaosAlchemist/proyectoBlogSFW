@@ -53,4 +53,23 @@
 
         return $acceso;
     }
+
+    public function  listarEntradas(){
+      $query="select * publicaciones order by asc";
+
+      $rs=this->c->ejecutar($query);
+
+      while($reg= mysql_fetch_array($rs)){
+          echo "<hr>";
+          echo "<h1><a href='controlador/entrada.php?id=$reg[3]'>$reg[3]</a></h1>";
+          echo "<br>";
+          echo "<h2><a href='controlador/entrada.php?id=$reg[4]'>$reg[4]</a></h2>";
+          echo "<hr>";
+
+
+      }
+    }
+
+
+
 ?>

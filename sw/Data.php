@@ -32,8 +32,9 @@ class Data{
         return $idPrivilegio;
     }
 
-    public function eliminarUsuario(){
-      $query = "delete * from usuarios"
+    public function eliminarUsuario($id){
+      $query = "delete * from usuarios where id = $id";
+      
 
     }
 

@@ -1,4 +1,18 @@
 <?php
+require_once "Conexion.php";
+
+class Data{
+    private $c;
+
+    public function __construct(){
+        $this->c = new Conexion(
+            "localhost",
+            "db_proyectoSoft",
+            "root",
+            "123456"
+        );
+    }
+
     public function getPrivilegio($user, $pass){
         $query = "select p.id
                   from permisos p, usuarios u
@@ -53,4 +67,5 @@
 
         return $acceso;
     }
+}
 ?>

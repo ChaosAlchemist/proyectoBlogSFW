@@ -109,6 +109,7 @@ class Data{
       where id='$id'";
       $this->c->ejecutar($q);
     }
+    
     public function actualizarPublicacion($id,$fecha,$titulo,$texto,$idUsuario){
       $q="update publicaciones
       set fecha='$fecha',
@@ -118,7 +119,7 @@ class Data{
       where id='$id'";
       $this->c->ejecutar($q);
     }
-    
+
     public function getListaPublicaciones(){
       $q="select texto from publicaciones";
       $rs=$this->c->ejecutar($q);

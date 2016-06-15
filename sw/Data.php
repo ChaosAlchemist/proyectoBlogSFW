@@ -70,7 +70,7 @@ class Data{
 <<<<<<< HEAD
 
     public function convertirUsuarioAdmi($user,$pass){
-        $query="UPDATE usuarios SET permiso = 1";
+        $query="UPDATE usuarios SET permiso = 1 where nombreUsuario = '$user' and clave = '$pass'";
         $rs=this->c->ejecutar($query);
 
         $existe=0;

@@ -3,7 +3,6 @@ Caso de Uso: "Eliminar Usuario".
 Parámetro/s: 
 
 id-> variable que identifica el id del usuario que será eliminado de la BD.
-idAdmin- variable que identifica el privilegio "Admin" de un usuario.
 pass: clave que ingresa el admin para poder eliminar un usuario
 -----------------------------------------------------------------------------
 

@@ -105,6 +105,12 @@ class Data{
       where id='$id'";
       $this->c->ejecutar($q);
     }
+
+    public function eliminarUsuario($id){
+        $q = "delete from usuario where id = $id";
+        $this->c->ejecutar($q);
+    }
+
     public function actualizarPublicacion($id,$fecha,$titulo,$texto,$idUsuario){
       $q="update publicaciones
       set fecha='$fecha',

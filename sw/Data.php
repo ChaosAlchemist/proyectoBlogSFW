@@ -67,5 +67,17 @@ class Data{
 
         return $acceso;
     }
-}
+
+    public function convertirUsuarioAdmi($user,$pass){
+        $query="UPDATE usuarios SET permiso = 1";
+        $rs=this->c->ejecutar($query);
+
+        $existe=0;
+
+        if($reg = mysql_fetch_array($rs)){
+            $existe= $reg[0];
+        }
+
+        return $existe;
+    }
 ?>

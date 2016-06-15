@@ -19,12 +19,21 @@
 
         if($existeUsuario){
             if($ingreso){
-                echo "Usuario ingresado";
+                echo "<info>";
+                echo "<mensaje>'Usuario ingresado'<mensaje/>";
+                echo "<login>true<login/>";
+                echo "<info>";
             }else{
-                echo "Clave usuario incorrecta"
+                echo "<info>";
+                echo "<mensaje>'Clave usuario incorrecta'<mensaje/>";
+                echo "<login>false<login/>";
+                echo "<info>";
             }
         }else{
-            echo "No existe usuario";
+            echo "<info>";
+            echo "<mensaje>'No se encuentra usuario'<mensaje/>";
+            echo "<login>false<login/>";
+            echo "<info>";
         }
     }
 ?>

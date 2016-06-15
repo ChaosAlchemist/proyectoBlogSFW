@@ -32,6 +32,11 @@ class Data{
         return $idPrivilegio;
     }
 
+    public function eliminarUsuario(){
+      $query = "delete * from usuarios"
+
+    }
+
     public function existeEntrada($idEntrada){
         $query="select count(*) from publicaciones where id=$idEntrada";
 

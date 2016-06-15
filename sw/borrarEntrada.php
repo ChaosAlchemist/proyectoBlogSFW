@@ -18,14 +18,23 @@
         if($existe){
             if($idPrivilegio==1){ //admin
                 $d->borrarEntrada($entrada);
-                echo "Borrado exitoso";
+                echo "<info>";
+                echo "<mensaje>'Borrado exitoso'<mensaje/>";
+                echo "<estado>true<estado/>";
+                echo "<info>";
             }else if($idPrivilegio==2){ //estandar
                 echo "Usuario no tiene privilegios administrador";
             }else{
-                echo "Usuario invalido";
+                echo "<info>";
+                echo "<mensaje>'Usuario invalido'<mensaje/>";
+                echo "<estado>false<estado/>";
+                echo "<info>";
             }
         }else{
-            echo "No se encuentra entrada";
+            echo "<info>";
+            echo "<mensaje>'Entrada no se encuentra'<mensaje/>";
+            echo "<estado>false<estado/>";
+            echo "<info>";
         }
     }//volver al index.
 ?>

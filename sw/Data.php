@@ -7,9 +7,9 @@ class Data{
     public function __construct(){
         $this->c = new Conexion(
             "localhost",
-            "db_proyectoSoft",
-            "root",
-            "123456"
+            "grupo_a",
+            "grupo_a",
+            ""
         );
     }
 
@@ -30,6 +30,12 @@ class Data{
         }
 
         return $idPrivilegio;
+    }
+
+    public function eliminarUsuario($id){
+      $query = "delete * from usuarios where id = $id";
+      $this->c->ejecutar($query);
+
     }
 
     public function existeEntrada($idEntrada){
@@ -67,10 +73,29 @@ class Data{
 
         return $acceso;
     }
-<<<<<<< HEAD
 
+<<<<<<< HEAD
+    public function  listarEntradas(){
+      $query="select * publicaciones order by asc";
+
+      $rs=this->c->ejecutar($query);
+
+      while($reg= mysql_fetch_array($rs)){
+          echo "<hr>";
+          echo "<h1><a href='controlador/entrada.php?id=$reg[3]'>$reg[3]</a></h1>";
+          echo "<br>";
+          echo "<h2><a href='controlador/entrada.php?id=$reg[4]'>$reg[4]</a></h2>";
+          echo "<hr>";
+
+
+      }
+    }
+
+
+
+=======
     public function convertirUsuarioAdmi($user,$pass){
-        $query="UPDATE usuarios SET permiso = 1";
+        $query="UPDATE usuarios SET permiso = 1 where nombreUsuario = '$user' and clave = '$pass'";
         $rs=this->c->ejecutar($query);
 
         $existe=0;
@@ -81,7 +106,7 @@ class Data{
 
         return $existe;
     }
-=======
+
     public function registrarUsuario($nombreUsuario,$pass,$idPrivilegio){
       $q="insert into usuarios values (null,'$nombreUsuario','$pass','$idPrivilegio')";
       $this->c->ejecutar($q);
@@ -105,12 +130,16 @@ class Data{
       where id='$id'";
       $this->c->ejecutar($q);
     }
+<<<<<<< HEAD
 
     public function eliminarUsuario($id){
         $q = "delete from usuario where id = $id";
         $this->c->ejecutar($q);
     }
 
+=======
+    
+>>>>>>> e802468cf73a43b3653422bb5a2286673670ac24
     public function actualizarPublicacion($id,$fecha,$titulo,$texto,$idUsuario){
       $q="update publicaciones
       set fecha='$fecha',
@@ -120,6 +149,7 @@ class Data{
       where id='$id'";
       $this->c->ejecutar($q);
     }
+
     public function getListaPublicaciones(){
       $q="select texto from publicaciones";
       $rs=$this->c->ejecutar($q);
@@ -127,6 +157,11 @@ class Data{
         echo $reg[0];
       }
     }
+
+    public function borrarEntrada($entrada){
+        $query="delete from publicaciones where id=$entrada";
+        $this->c->ejecutar($query);
+    }
 }
->>>>>>> 38bcb5a31ae7e70831fbc664f66303e436c532f0
+>>>>>>> 70b3e2e75bf04e29ceeb0fe49b5ddee1be995263
 ?>

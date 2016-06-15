@@ -31,3 +31,5 @@ create table publicaciones(
     foreign key(idUsuario) references usuarios(id),
     primary key(id)
 );
+
+select*from publicaciones

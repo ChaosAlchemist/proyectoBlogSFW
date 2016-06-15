@@ -1,6 +1,6 @@
 <?php
     if(!isset($_GET["user"])){
-        require_once "../bd/Data.php";
+        require_once "Data.php";
 
         $user=$_GET["user"];
         $pass=$_GET["pass"];

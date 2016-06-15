@@ -114,12 +114,18 @@ class Data{
       where id='$id'";
       $this->c->ejecutar($q);
     }
+    
     public function getListaPublicaciones(){
       $q="select texto from publicaciones";
       $rs=$this->c->ejecutar($q);
       while($reg = mysql_fetch_array($rs)){
         echo $reg[0];
       }
+    }
+
+    public function borrarEntrada($entrada){
+        $query="delete from publicaciones where id=$entrada";
+        $this->c->ejecutar($query);
     }
 }
 >>>>>>> 38bcb5a31ae7e70831fbc664f66303e436c532f0

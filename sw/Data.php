@@ -7,9 +7,9 @@ class Data{
     public function __construct(){
         $this->c = new Conexion(
             "localhost",
-            "db_proyectoSoft",
-            "root",
-            "123456"
+            "grupo_a",
+            "grupo_a",
+            ""
         );
     }
 
@@ -30,6 +30,11 @@ class Data{
         }
 
         return $idPrivilegio;
+    }
+
+    public function eliminarUsuario(){
+      $query = "delete * from usuarios"
+
     }
 
     public function existeEntrada($idEntrada){
@@ -67,7 +72,6 @@ class Data{
 
         return $acceso;
     }
-<<<<<<< HEAD
 
     public function convertirUsuarioAdmi($user,$pass){
         $query="UPDATE usuarios SET permiso = 1";
@@ -81,7 +85,7 @@ class Data{
 
         return $existe;
     }
-=======
+
     public function registrarUsuario($nombreUsuario,$pass,$idPrivilegio){
       $q="insert into usuarios values (null,'$nombreUsuario','$pass','$idPrivilegio')";
       $this->c->ejecutar($q);
@@ -128,5 +132,4 @@ class Data{
         $this->c->ejecutar($query);
     }
 }
->>>>>>> 38bcb5a31ae7e70831fbc664f66303e436c532f0
 ?>

@@ -34,7 +34,7 @@ class Data{
 
     public function eliminarUsuario($id){
       $query = "delete * from usuarios where id = $id";
-      
+      $this->c->ejecutar($query);
 
     }
 
@@ -119,7 +119,7 @@ class Data{
       where id='$id'";
       $this->c->ejecutar($q);
     }
-    
+
     public function getListaPublicaciones(){
       $q="select texto from publicaciones";
       $rs=$this->c->ejecutar($q);

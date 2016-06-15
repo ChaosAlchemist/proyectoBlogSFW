@@ -13,9 +13,11 @@ if(isset($_GET["id"])){
 
 
   if($permiso == 1){
-    if($existe)
-
-
+    if($d->eliminarUsuario($id)){
+      echo "<info>";
+      echo "<mensaje>'Usuario Eliminado con éxito'<mensaje/>";
+      echo "<delete>true<delete/>";
+      echo "<info/>";      
   }else{
     echo "<info>";
 		echo "<mensaje>'No posee los privilegios necesarios para realizar esta acción'<mensaje/>";

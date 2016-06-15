@@ -67,5 +67,60 @@ class Data{
 
         return $acceso;
     }
+<<<<<<< HEAD
+
+    public function convertirUsuarioAdmi($user,$pass){
+        $query="UPDATE usuarios SET permiso = 1";
+        $rs=this->c->ejecutar($query);
+
+        $existe=0;
+
+        if($reg = mysql_fetch_array($rs)){
+            $existe= $reg[0];
+        }
+
+        return $existe;
+    }
+=======
+    public function registrarUsuario($nombreUsuario,$pass,$idPrivilegio){
+      $q="insert into usuarios values (null,'$nombreUsuario','$pass','$idPrivilegio')";
+      $this->c->ejecutar($q);
+    }
+
+    public function registrarPublicacion($fecha,$titulo,$texto,$idUsuario){
+      $q="insert into publicaciones values
+      (null,
+      '$fecha',
+      '$titulo',
+      '$texto',
+      '$idUsuario');";
+      $this->c->ejecutar($q);
+    }
+
+    public function actualizarUsuario($id,$nombreUsuario,$clave,$permiso){
+      $q="update usuarios
+      set nombreUsuario='$nombreUsuario'
+      ,clave='$clave'
+      ,permiso='$permiso'
+      where id='$id'";
+      $this->c->ejecutar($q);
+    }
+    public function actualizarPublicacion($id,$fecha,$titulo,$texto,$idUsuario){
+      $q="update publicaciones
+      set fecha='$fecha',
+      titulo='$titulo',
+      texto='$texto',
+      idUsuario='$idUsuario'
+      where id='$id'";
+      $this->c->ejecutar($q);
+    }
+    public function getListaPublicaciones(){
+      $q="select texto from publicaciones";
+      $rs=$this->c->ejecutar($q);
+      while($reg = mysql_fetch_array($rs)){
+        echo $reg[0];
+      }
+    }
 }
+>>>>>>> 38bcb5a31ae7e70831fbc664f66303e436c532f0
 ?>

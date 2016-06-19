@@ -74,7 +74,6 @@ class Data{
         return $acceso;
     }
 
-<<<<<<< HEAD
     public function  listarEntradas(){
       $query="select * publicaciones order by asc";
 
@@ -91,9 +90,6 @@ class Data{
       }
     }
 
-
-
-=======
     public function convertirUsuarioAdmi($user,$pass){
         $query="UPDATE usuarios SET permiso = 1 where nombreUsuario = '$user' and clave = '$pass'";
         $rs=this->c->ejecutar($query);
@@ -131,6 +127,11 @@ class Data{
       $this->c->ejecutar($q);
     }
 
+    public function eliminarUsuario($id){
+        $q = "delete from usuario where id = $id";
+        $this->c->ejecutar($q);
+    }
+
     public function actualizarPublicacion($id,$fecha,$titulo,$texto,$idUsuario){
       $q="update publicaciones
       set fecha='$fecha',
@@ -154,5 +155,5 @@ class Data{
         $this->c->ejecutar($query);
     }
 }
->>>>>>> 70b3e2e75bf04e29ceeb0fe49b5ddee1be995263
+
 ?>

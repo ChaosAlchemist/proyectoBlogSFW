@@ -1,5 +1,12 @@
 <?php
 if(isset($_GET["id"])){
+<<<<<<< HEAD
+    $id = $_GET["id"];
+    require_once "../sw/Data.php";
+    $d = new Data();
+    $d->eliminarUsuario($id);
+}
+=======
   $id = $_GET["id"];
   require_once "/Data.php";
   $user = $_GET["USUARIO"];
@@ -31,3 +38,4 @@ if(isset($_GET["id"])){
 
 
   ?>
+>>>>>>> e802468cf73a43b3653422bb5a2286673670ac24

@@ -9,7 +9,7 @@ class Data{
             "localhost",
             "grupo_a",
             "grupo_a",
-            ""
+            "db_proyectoSoft"
         );
     }
 
@@ -130,7 +130,7 @@ class Data{
       where id='$id'";
       $this->c->ejecutar($q);
     }
-    
+
     public function actualizarPublicacion($id,$fecha,$titulo,$texto,$idUsuario){
       $q="update publicaciones
       set fecha='$fecha',

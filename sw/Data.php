@@ -7,9 +7,9 @@ class Data{
     public function __construct(){
         $this->c = new Conexion(
             "localhost",
-            "db_proyectoSoft",
-            "root",
-            ""
+            "grupo_a",
+            "qwerty",
+            "grupo_a"
         );
     }
 
@@ -25,7 +25,7 @@ class Data{
         $idPrivilegio = 0;
 
         /*Si existe algún registro*/
-        if($reg = mysql_fetch_array($rs)){
+        if($reg = mysqli_fetch_array($rs)){
             $idPrivilegio = $reg[0];
         }
 
@@ -45,7 +45,7 @@ class Data{
         $rs=$this->c->ejecutar($query);
         $existe=0;
 
-        if($reg = mysql_fetch_array($rs)){
+        if($reg = mysqli_fetch_array($rs)){
             $existe= $reg[0];
         }
 
@@ -57,7 +57,7 @@ class Data{
         $rs=$this->c->ejecutar($query);
         $existe=0;
 
-        if($reg = mysql_fetch_array($rs)){
+        if($reg = mysqli_fetch_array($rs)){
             $existe= $reg[0];
         }
 
@@ -70,7 +70,7 @@ class Data{
         $rs=$this->c->ejecutar($query);
         $existe=0;
 
-        if($reg = mysql_fetch_array($rs)){
+        if($reg = mysqli_fetch_array($rs)){
             $existe= $reg[0];
         }
 
@@ -81,7 +81,7 @@ class Data{
         $query="select count(*) from usuarios where nombreUsuario='$user' and clave='$pass'";
         $acceso=0;
 
-        if($reg = mysql_fetch_array($rs)){
+        if($reg = mysqli_fetch_array($rs)){
             $acceso= $reg[0];
         }
 
@@ -94,7 +94,7 @@ class Data{
 
         $existe=0;
 
-        if($reg = mysql_fetch_array($rs)){
+        if($reg = mysqli_fetch_array($rs)){
             $existe= $reg[0];
         }
 
@@ -137,7 +137,7 @@ class Data{
     public function getListaPublicaciones(){
       $q="select texto from publicaciones";
       $rs=$this->c->ejecutar($q);
-      while($reg = mysql_fetch_array($rs)){
+      while($reg = mysqli_fetch_array($rs)){
         echo $reg[0];
       }
     }

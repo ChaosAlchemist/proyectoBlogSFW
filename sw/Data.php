@@ -7,9 +7,9 @@ class Data{
     public function __construct(){
         $this->c = new Conexion(
             "localhost",
-            "grupo_a",
-            "grupo_a",
-            "db_proyectoSoft"
+            "db_proyectoSoft",
+            "root",
+            ""
         );
     }
 
@@ -33,15 +33,16 @@ class Data{
     }
 
     public function eliminarUsuario($id){
-      $query = "delete * from usuarios where id = $id";
-      $this->c->ejecutar($query);
-
+      $query = "delete from usuarios where id = $id";
+      return $this->c->ejecutar($query);
     }
+
+
 
     public function existeEntrada($idEntrada){
         $query="select count(*) from publicaciones where id=$idEntrada";
 
-        $rs=this->c->ejecutar($query);
+        $rs=$this->c->ejecutar($query);
         $existe=0;
 
         if($reg = mysql_fetch_array($rs)){
@@ -51,9 +52,22 @@ class Data{
         return $existe;
     }
 
+    public function verificarUsuario($id){
+         $query ="select count(*) from usuarios where id=$id";
+        $rs=$this->c->ejecutar($query);
+        $existe=0;
+
+        if($reg = mysql_fetch_array($rs)){
+            $existe= $reg[0];
+        }
+
+        return $existe;
+
+    }
+
     public function existeUsuario($user){
-        $query ="select count(*) from usuarios where nombreUsuario=$user";
-        $rs=this->c->ejecutar($query);
+         $query ="select count(*) from usuarios where nombreUsuario=$user";
+        $rs=$this->c->ejecutar($query);
         $existe=0;
 
         if($reg = mysql_fetch_array($rs)){
@@ -74,25 +88,9 @@ class Data{
         return $acceso;
     }
 
-    public function  listarEntradas(){
-      $query="select * publicaciones order by asc";
-
-      $rs=this->c->ejecutar($query);
-
-      while($reg= mysql_fetch_array($rs)){
-          echo "<hr>";
-          echo "<h1><a href='controlador/entrada.php?id=$reg[3]'>$reg[3]</a></h1>";
-          echo "<br>";
-          echo "<h2><a href='controlador/entrada.php?id=$reg[4]'>$reg[4]</a></h2>";
-          echo "<hr>";
-
-
-      }
-    }
-
     public function convertirUsuarioAdmi($user,$pass){
         $query="UPDATE usuarios SET permiso = 1 where nombreUsuario = '$user' and clave = '$pass'";
-        $rs=this->c->ejecutar($query);
+        $rs=$this->c->ejecutar($query);
 
         $existe=0;
 
@@ -126,12 +124,6 @@ class Data{
       where id='$id'";
       $this->c->ejecutar($q);
     }
-
-    public function eliminarUsuario($id){
-        $q = "delete from usuario where id = $id";
-        $this->c->ejecutar($q);
-    }
-
     public function actualizarPublicacion($id,$fecha,$titulo,$texto,$idUsuario){
       $q="update publicaciones
       set fecha='$fecha',
@@ -155,5 +147,4 @@ class Data{
         $this->c->ejecutar($query);
     }
 }
-
 ?>

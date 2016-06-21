@@ -1,41 +1,52 @@
 <?php
+// echo "<meta charset='utf-8'>";
 if(isset($_GET["id"])){
-<<<<<<< HEAD
-    $id = $_GET["id"];
-    require_once "../sw/Data.php";
-    $d = new Data();
-    $d->eliminarUsuario($id);
+     require_once "Data.php";
+     $id = $_GET["id"];
+     $user = $_GET["user"];
+     $pass = $_GET["pass"];
 }
-=======
-  $id = $_GET["id"];
-  require_once "/Data.php";
-  $user = $_GET["USUARIO"];
-  $pass = $_GET["CLAVE"];
+
+$d = new Data();
+
+$permiso = $d->getPrivilegio($user,$pass);
+$existe = $d->verificarUsuario($id);
+$_SESSION["permiso"] = $permiso;
+
+$men = null;
+$del = null;
+
+if($permiso == 1){
+     if($existe == 1){
+          if($d->eliminarUsuario($id)){
+               $men = "Usuario Eliminado con éxito";
+               $del = "true";
+          }else{
+               $men = "Error al ejecutar la consulta";
+               $del = "false";
+          }
+     }else{
+          $men = "El usuario especificado no existe";
+          $del = "false";
+
+     }
 
 
 
-  $d = new Data();
+}else{
+     $men = "No posee los privilegios necesarios para realizar esta acción";
+     $del = "false";
+}
 
-  $permiso = $d->getPrivilegio($user,$pass);
-
-
-  if($permiso == 1){
-    if($d->eliminarUsuario($id)){
-      echo "<info>";
-      echo "<mensaje>'Usuario Eliminado con éxito'<mensaje/>";
-      echo "<delete>true<delete/>";
-      echo "<info/>";      
-  }else{
-    echo "<info>";
-		echo "<mensaje>'No posee los privilegios necesarios para realizar esta acción'<mensaje/>";
-		echo "<delete>false<delete/>";
-	  echo "<info/>";
-  }
-
-  $permiso = $d->getPrivilegio($user,$pass);
-  $_SESSION["idPrivilegio"] = $idPrivilegio;
-  $d->eliminarUsuario($id,$permiso);
+echo '<?xml version="1.0" encoding="UTF-8"?>';
+echo "<info>";
+echo "<mensaje>$men</mensaje>";
+echo "<delete>$del</delete>";
+echo "</info>";
 
 
-  ?>
->>>>>>> e802468cf73a43b3653422bb5a2286673670ac24
+
+
+
+
+?>

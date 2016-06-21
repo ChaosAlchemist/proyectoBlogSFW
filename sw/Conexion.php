@@ -1,23 +1,23 @@
 <?php
-  class Conexion{
-    private $con;
+class Conexion{
+     private $con;
 
-    public function __construct($server, $user, $pass, $bd){
-      $this->con=mysqli_connect($server, $user, $pass, $bd);
+     public function __construct($server, $bd, $user, $pass){
+          $this->con=mysql_connect($server, $user, $pass);
 
-      if(!$this->con){
-        die("Error al conectar: ".mysql_error());
-      }
+          if(!$this->con){
+               die("Error al conectar: ".mysql_error());
+          }
 
-      //$sBD=mysql_select_db($bd, $this->con);
+          $sBD=mysql_select_db($bd, $this->con);
 
-      //if(!$sBD){
-        //  die("Error al seleccionar: ".mysql_error());
-      //}
-    }
+          if(!$sBD){
+               die("Error al seleccionar: ".mysql_error());
+          }
+     }
 
-    public function ejecutar($query){
-        return mysqli_query($this, $query);
-    }
-  }
+     public function ejecutar($query){
+          return mysql_query($query);
+     }
+}
 ?>

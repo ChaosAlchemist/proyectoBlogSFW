@@ -142,6 +142,24 @@ class Data{
       }
     }
 
+
+    public function  listarEntradas(){
+        $query="select * from publicaciones ";
+        $rs = $this->c->ejecutar($query);
+        echo "<h1>Listado de Entradas</h1>";
+          while($reg= mysql_fetch_array($rs)){
+            echo "<br>";
+            echo "Entrada :".$reg[2];
+            echo "<br>";
+            echo "Texto :".$reg[3];
+            echo "<br>";
+
+            echo "<hr>";
+
+
+          }
+
+}
     public function borrarEntrada($entrada){
         $query="delete from publicaciones where id=$entrada";
         $this->c->ejecutar($query);

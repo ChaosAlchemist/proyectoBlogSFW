@@ -80,7 +80,7 @@ class Data{
     public function logIn($user, $pass){
         $query="select count(*) from usuarios where nombreUsuario='$user' and clave='$pass'";
         $rs=$this->c->ejecutar($query);
-        
+
         $acceso=0;
         if($reg = mysqli_fetch_array($rs)){
             $acceso= $reg[0];
@@ -107,7 +107,7 @@ class Data{
       $this->c->ejecutar($q);
     }
 
-    public function registrarPublicacion($fecha,$titulo,$texto,$idUsuario){
+    public function escribirPublicacion($fecha,$titulo,$texto,$idUsuario){
       $q="insert into publicaciones values
       (null,
       '$fecha',

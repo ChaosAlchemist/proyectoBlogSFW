@@ -1,8 +1,8 @@
 <?php
-require_once"../bd/Data2.php";
+require_once"Data.php";
 
-if(isset($_POST["btnLeerEntrada"])){
-  $id=$_POST["txtId"];
+if(isset($_GET["btnLeerEntrada"])){
+  $id=$_GET["txtId"];
   $d =new Data();
   $d->getEntrada($id);
 }else {

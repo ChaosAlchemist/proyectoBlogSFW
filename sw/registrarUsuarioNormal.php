@@ -2,10 +2,10 @@
   require_once"Data.php";
 
   if(isset($_GET["btnRegistrarNormal"])){
-    $nombreUsuario=$_POST["txtNombreUsuario"];
-    $pass1=$_POST["txtPass1"];
-    $pass2=$_POST["txtPass2"];
-    $idPrivilegio=$_POST["txtIdPrivilegio"];
+    $nombreUsuario=$_GET["txtNombreUsuario"];
+    $pass1=$_GET["txtPass1"];
+    $pass2=$_GET["txtPass2"];
+    $idPrivilegio=$_GET["txtIdPrivilegio"];
     $d =new Data();
     $registro=true;
     $errorPass=false;
@@ -22,7 +22,7 @@
         $errorPass=true;
         echo "<info>";
         echo "  <mensaje>claves coinciden</mensaje>";
-        echo "  <estado>$$errorPass</estado>";
+        echo "  <estado>$errorPass</estado>";
         echo "</info>";
 
       }else {
@@ -40,6 +40,6 @@
 
 
   }else {
-    echo "error al registrar";
-    header("location: ../index.php");
+    echo "error al retornat registrar";
+
  ?>

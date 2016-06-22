@@ -10,23 +10,36 @@ if(isset($_GET["id"])){
     $idPrivilegio = $d->getPermisoById($id);
     $existeUsuario = $d->existeUsuarioById($id);
     $existe=false;
+
+    $men = null;
+    $convertir = null;
+
     if($existeUsuario == 1){
         $existe=true;
     }
 
     if($existe){
         if($idPrivilegio == 1){
-            echo "El usuario ya es administrador";
+            $men= "El usuario ya es administrador";
+            $convertir = "false";
         }else if($idPrivilegio == 2){
             $d->convertirUsuarioAdmi($id);
-            
-            echo "El usuario se ha convertido a administrador";
+
+            $men= "El usuario se ha convertido a administrador";
+            $convertir = "true";
         }else{
-            echo "Usuario invalido";
+            $men= "Usuario invalido";
+            $convertir = "false";
         }
     }else{
-        echo "No se encuentra usuario";
+        $men= "No se encuentra usuario";
+        $convertir = "false";
     }
+    echo '<?xml version="1.0" encoding="UTF-8"?>';
+    echo "<info>";
+    echo "<mensaje>$men</mensaje>";
+    echo "<convertir>$convertir</convertir>";
+    echo "</info>";
 
 }
 ?>

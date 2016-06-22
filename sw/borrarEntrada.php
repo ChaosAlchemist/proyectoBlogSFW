@@ -1,5 +1,5 @@
 <?php
-    if(!isset($_GET["user"])){
+    if(isset($_GET["user"])){
         require_once "Data.php";
 
         $user=$_GET["user"];
@@ -40,7 +40,10 @@
             echo "<info>";
         }
     }else{
-        echo "No se ha indicado los parametros necesarios";
+        echo "<info>";
+        echo "  <mensaje>'No se ha indicado los parametros necesarios'<mensaje/>";
+        echo "  <estado>false<estado/>";
+        echo "<info>";
     }
     //volver al index.
 ?>

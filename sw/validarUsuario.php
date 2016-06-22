@@ -1,5 +1,5 @@
 <?php
-    if(!isset($_GET["user"])){
+    if(isset($_GET["user"])){
         require_once "Data.php";
 
         $user=$_GET["user"];
@@ -35,5 +35,10 @@
             echo "<login>false<login/>";
             echo "<info>";
         }
+    }else{
+        echo "<info>";
+        echo "<mensaje>'No se han indicado parametros validos'<mensaje/>";
+        echo "<login>false<login/>";
+        echo "<info>";
     }
 ?>

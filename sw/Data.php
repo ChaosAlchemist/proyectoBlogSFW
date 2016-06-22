@@ -66,7 +66,7 @@ class Data{
     }
 
     public function existeUsuario($user){
-         $query ="select count(*) from usuarios where nombreUsuario=$user";
+         $query ="select count(*) from usuarios where nombreUsuario='$user'";
         $rs=$this->c->ejecutar($query);
         $existe=0;
 
@@ -79,8 +79,9 @@ class Data{
 
     public function logIn($user, $pass){
         $query="select count(*) from usuarios where nombreUsuario='$user' and clave='$pass'";
+        $rs=$this->c->ejecutar($query);
+        
         $acceso=0;
-
         if($reg = mysqli_fetch_array($rs)){
             $acceso= $reg[0];
         }

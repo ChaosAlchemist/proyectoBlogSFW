@@ -20,25 +20,25 @@
         if($existeUsuario){
             if($ingreso){
                 echo "<info>";
-                echo "<mensaje>'Usuario ingresado'<mensaje/>";
-                echo "<login>true<login/>";
-                echo "<info>";
+                echo "<mensaje>Usuario ingresado</mensaje>";
+                echo "<login>true</login>";
+                echo "</info>";
             }else{
                 echo "<info>";
-                echo "<mensaje>'Clave usuario incorrecta'<mensaje/>";
-                echo "<login>false<login/>";
-                echo "<info>";
+                echo "<mensaje>Clave usuario incorrecta</mensaje>";
+                echo "<login>false</login>";
+                echo "</info>";
             }
         }else{
             echo "<info>";
-            echo "<mensaje>'No se encuentra usuario'<mensaje/>";
-            echo "<login>false<login/>";
-            echo "<info>";
+            echo "<mensaje>No se encuentra usuario</mensaje>";
+            echo "<login>false</login/>";
+            echo "</info>";
         }
     }else{
         echo "<info>";
-        echo "<mensaje>'No se han indicado parametros validos'<mensaje/>";
-        echo "<login>false<login/>";
-        echo "<info>";
+        echo "<mensaje>No se han indicado parametros validos</mensaje>";
+        echo "<login>false</login>";
+        echo "</info>";
     }
 ?>

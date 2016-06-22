@@ -1,32 +1,32 @@
 <?php
-if(!isset($_GET["user"])){
-    require_once "../bd/Data.php";
+if(isset($_GET["id"])){
+    require_once "Data.php";
+    $user = $_GET["user"];
+    $pass = $_GET["pass"];
+    $id = $_GET["id"];
 
-    $user=$_GET["user"];
-    $pass=$_GET["pass"];
-    $entrada=$_GET["entrada"];
+    $d = new Data();
 
-    $d=new Data();
-    $idPrivilegio=$d->getPrivilegio($user,$pass):
-    $existeEntrada=$d->existeEntrada($entrada);
-
+    $idPrivilegio = $d->getPermisoById($id);
+    $existeUsuario = $d->existeUsuarioById($id);
     $existe=false;
-    if($existeEntrada==1){
+    if($existeUsuario == 1){
         $existe=true;
     }
 
     if($existe){
-        if($idPrivilegio==1){
+        if($idPrivilegio == 1){
             echo "El usuario ya es administrador";
-        }else if($idPrivilegio==2){
-          $d->convertirUsuarioAdmi($user,$pass);
+        }else if($idPrivilegio == 2){
+            $d->convertirUsuarioAdmi($id);
+            
             echo "El usuario se ha convertido a administrador";
         }else{
             echo "Usuario invalido";
         }
     }else{
-        echo "No se encuentra entrada";
+        echo "No se encuentra usuario";
     }
-}
 
- ?>
+}
+?>

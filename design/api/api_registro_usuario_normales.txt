@@ -22,23 +22,16 @@ index.php?registro=false;
 	<info>usuario no existe</info>
 </status>
 
-index.php?registro=false&errorPass=0
+index.php?registro=false&errorPass=true
 //significa que  la claves si coinciden
 
 <status>
 	<info>claves coinciden</info>
 </status>
 
-index.php?registro=false&errorPass=1
+index.php?registro=false&errorPass=false
 //significa que  la claves no coinciden
 
 <status>
 	<info>claves no existen</info>
-</status>
-
-index.php?registro=false&errorPass=2
-//significa que que la clave es muy corta einsegura
-
-<status>
-	<info>clave muy corta</info>
 </status>

@@ -39,5 +39,8 @@
             echo "  <estado>false<estado/>";
             echo "<info>";
         }
-    }//volver al index.
+    }else{
+        echo "No se ha indicado los parametros necesarios";
+    }
+    //volver al index.
 ?>

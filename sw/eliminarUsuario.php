@@ -1,33 +1,32 @@
 <?php
-// echo "<meta charset='utf-8'>";
 if(isset($_GET["id"])){
      require_once "Data.php";
-     $id = $_GET["id"];
+     // user = es el nombre de usuario del administrador
+     // pass = es la password del administrador.
      $user = $_GET["user"];
      $pass = $_GET["pass"];
+     // id = ID del usuario ha borrar.
+     $id = $_GET["id"];
 
-     $d= new Data();
+     // URL:
+     // http://10.52.7.1/grupo_a/eliminarUsuario.php?user=""&pass=""&id=""
+
+     $d = new Data();
 
      $permiso = $d->getPrivilegio($user,$pass);
-     $existe = $d->verificarUsuario($id);
-     $_SESSION["permiso"] = $permiso;
+     $existe = $d->existeUsuarioById($id);
 
      $men = null;
      $del = null;
 
      if($permiso == 1){
           if($existe == 1){
-               if($d->eliminarUsuario($id)){
-                    $men = "Usuario Eliminado con éxito";
-                    $del = "true";
-               }else{
-                    $men = "Error al ejecutar la consulta";
-                    $del = "false";
-               }
+              $d->eliminarUsuario($id);
+              $men = "Usuario Eliminado con éxito";
+              $del = "true";
           }else{
                $men = "El usuario especificado no existe";
                $del = "false";
-
           }
 
 
@@ -37,20 +36,15 @@ if(isset($_GET["id"])){
           $del = "false";
      }
 
-     echo '<?xml version="1.0" encoding="UTF-8"?>';
-     echo "<info>";
-     echo "<mensaje>$men</mensaje>";
-     echo "<delete>$del</delete>";
-     echo "</info>";
+
 }else{
-    echo "no ha indicado id";
+    $men = "No ha ingresado parámetros. No se puede llevar a cabo la operación.";
+    $del = "false";
 }
 
-
-
-
-
-
-
-
+echo '<?xml version="1.0" encoding="UTF-8"?>';
+echo "<info>";
+echo "<mensaje>$men</mensaje>";
+echo "<delete>$del</delete>";
+echo "</info>";
 ?>

@@ -64,7 +64,7 @@ class Data{
         return $existe;
 
     }
-    public function verificarUsuario($nombre){
+    public function validarUsuario($nombre){
          $query ="select count(*) from usuarios where nombreUsuario='$nombre'";
         $rs=$this->c->ejecutar($query);
         $existe=0;

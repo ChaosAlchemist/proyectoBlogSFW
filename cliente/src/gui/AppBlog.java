@@ -16,6 +16,7 @@ import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 import javax.xml.parsers.ParserConfigurationException;
 import model.BorrarEntrada;
+import model.Usuario;
 import org.jespxml.JespXML;
 import org.jespxml.excepciones.TagHijoNotFoundException;
 import org.jespxml.modelo.Tag;
@@ -63,6 +64,18 @@ public class AppBlog extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         btnBorrarEntrada = new javax.swing.JButton();
         txtEntrada = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtRegUsuario = new javax.swing.JTextField();
+        txtRegClave1 = new javax.swing.JPasswordField();
+        txtRegClave2 = new javax.swing.JPasswordField();
+        cboPriviegio = new javax.swing.JComboBox<>();
+        lblMensajeRegistro = new javax.swing.JLabel();
+        btnRegistrar = new javax.swing.JButton();
+        lblRegEstado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,7 +130,7 @@ public class AppBlog extends javax.swing.JFrame {
                                     .addComponent(jLabel2))
                                 .addGap(38, 38, 38)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                                    .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                                     .addComponent(txtUser)))
                             .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -142,7 +155,7 @@ public class AppBlog extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -209,7 +222,7 @@ public class AppBlog extends javax.swing.JFrame {
                                     .addComponent(jLabel5))
                                 .addGap(22, 22, 22)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtPass1, javax.swing.GroupLayout.DEFAULT_SIZE, 117, Short.MAX_VALUE)
+                                    .addComponent(txtPass1, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
                                     .addComponent(txtUser1)
                                     .addComponent(txtEntrada)))
                             .addComponent(btnBorrarEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -236,7 +249,7 @@ public class AppBlog extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(txtEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnBorrarEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
+                        .addComponent(btnBorrarEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))
                     .addComponent(lblEstado1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblMensaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -245,11 +258,94 @@ public class AppBlog extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Borrar Entrada", jPanel2);
 
+        jLabel6.setText("Usuario :");
+
+        jLabel7.setText("Contraseña :");
+
+        jLabel8.setText("Contraseña :");
+
+        jLabel9.setText("Privilegio :");
+
+        cboPriviegio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "estandar" }));
+
+        lblMensajeRegistro.setFont(new java.awt.Font("Microsoft JhengHei", 3, 14)); // NOI18N
+        lblMensajeRegistro.setForeground(new java.awt.Color(0, 255, 0));
+        lblMensajeRegistro.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
+
+        lblRegEstado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMensajeRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(txtRegUsuario)
+                            .addComponent(txtRegClave1)
+                            .addComponent(txtRegClave2)
+                            .addComponent(cboPriviegio, 0, 130, Short.MAX_VALUE))
+                        .addGap(45, 45, 45)
+                        .addComponent(lblRegEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(txtRegUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(txtRegClave1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(txtRegClave2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(cboPriviegio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRegistrar))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(lblRegEstado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMensajeRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
+        );
+
+        jTabbedPane2.addTab("Registrar Usuario", jPanel3);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -265,33 +361,32 @@ public class AppBlog extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         try {
-            String user=txtUser.getText();
-            String pass=txtPass.getText();
-            String server="http://10.52.7.1/grupo_a/validarUsuario.php";
-            Login login=new Login(server, user, pass);
-            String url=login.getUrl();
-            
+            String user = txtUser.getText();
+            String pass = txtPass.getText();
+            String server = "http://10.52.7.1/grupo_a/validarUsuario.php";
+            Login login = new Login(server, user, pass);
+            String url = login.getUrl();
+
             System.out.println(url);
-            
+
             JespXML a = new JespXML(new URL(url));
             Tag tagInfo = a.leerXML();
             Tag tagMensaje = tagInfo.getTagHijoByName("mensaje");
             Tag taglogin = tagInfo.getTagHijoByName("login");
-            
-            String mensaje=tagMensaje.getContenido();
-            String strEstado=taglogin.getContenido();
-            Boolean estado=Boolean.valueOf(strEstado);
-            
+
+            String mensaje = tagMensaje.getContenido();
+            String strEstado = taglogin.getContenido();
+            Boolean estado = Boolean.valueOf(strEstado);
+
             lblMensaje.setText(mensaje);
-            
+
 //            lblEstado.setText(estado);            
-            if(estado){
+            if (estado) {
                 lblEstado.setIcon(new ImageIcon(getClass().getResource("/resource/check.png")));
-            }else{
+            } else {
                 lblEstado.setIcon(new ImageIcon(getClass().getResource("/resource/na.png")));
             }
-            
-            
+
         } catch (IOException ex) {
             Logger.getLogger(AppBlog.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParserConfigurationException ex) {
@@ -304,7 +399,7 @@ public class AppBlog extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void txtPassKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPassKeyReleased
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnLogin.doClick();
         }
     }//GEN-LAST:event_txtPassKeyReleased
@@ -320,48 +415,47 @@ public class AppBlog extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUser1ActionPerformed
 
     private void txtUser1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUser1KeyReleased
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnBorrarEntrada.doClick();
         }
     }//GEN-LAST:event_txtUser1KeyReleased
 
     private void txtPass1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPass1KeyReleased
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnBorrarEntrada.doClick();
-        }        
+        }
     }//GEN-LAST:event_txtPass1KeyReleased
 
     private void btnBorrarEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarEntradaActionPerformed
         try {
-            String user=txtUser1.getText();
-            String pass=txtPass1.getText();
-            String entrada=txtEntrada.getText();
-            
-            String server="http://10.52.7.1/grupo_a/borrarEntrada.php";
-            BorrarEntrada borrar=new BorrarEntrada(server, user, pass, entrada);
-            String url=borrar.getUrl();
-            
+            String user = txtUser1.getText();
+            String pass = txtPass1.getText();
+            String entrada = txtEntrada.getText();
+
+            String server = "http://10.52.7.1/grupo_a/borrarEntrada.php";
+            BorrarEntrada borrar = new BorrarEntrada(server, user, pass, entrada);
+            String url = borrar.getUrl();
+
             System.out.println(url);
-            
+
             JespXML a = new JespXML(new URL(url));
             Tag tagInfo = a.leerXML();
             Tag tagMensaje = tagInfo.getTagHijoByName("mensaje");
             Tag tagEstado = tagInfo.getTagHijoByName("estado");
-            
-            String mensaje=tagMensaje.getContenido();
-            String strEstado=tagEstado.getContenido();
-            Boolean estado=Boolean.valueOf(strEstado);
-            
+
+            String mensaje = tagMensaje.getContenido();
+            String strEstado = tagEstado.getContenido();
+            Boolean estado = Boolean.valueOf(strEstado);
+
             lblMensaje1.setText(mensaje);
-            
+
 //            lblEstado.setText(estado);            
-            if(estado){
+            if (estado) {
                 lblEstado1.setIcon(new ImageIcon(getClass().getResource("/resource/check.png")));
-            }else{
+            } else {
                 lblEstado1.setIcon(new ImageIcon(getClass().getResource("/resource/na.png")));
             }
-            
-            
+
         } catch (IOException ex) {
             Logger.getLogger(AppBlog.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParserConfigurationException ex) {
@@ -374,10 +468,60 @@ public class AppBlog extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBorrarEntradaActionPerformed
 
     private void txtEntradaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEntradaKeyReleased
-        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             btnBorrarEntrada.doClick();
         }
     }//GEN-LAST:event_txtEntradaKeyReleased
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        try {
+            String usu = txtRegUsuario.getText();
+            String clave1 = txtRegClave1.getText();
+            String clave2 = txtRegClave2.getText();
+            int privilegio = cboPriviegio.getItemCount();
+            
+            String server = "http://10.52.7.1/grupo_a/registrarUsuarioNormal.php";
+            Usuario usuario = new Usuario(server,usu, clave1,clave2,privilegio);
+            String url = usuario.getUrl();
+            
+            System.out.println(url);
+            
+            JespXML a = new JespXML(new URL(url));
+            Tag tagInfo = a.leerXML();
+            Tag tagMensaje = tagInfo.getTagHijoByName("mensaje");
+            Tag taglogin = tagInfo.getTagHijoByName("estado");
+            
+            String mensaje = tagMensaje.getContenido();
+            String strEstado = taglogin.getContenido();
+            Boolean estado = Boolean.valueOf(strEstado);
+            
+            lblMensajeRegistro.setText(mensaje);
+            
+            if (estado) {
+                lblRegEstado.setIcon(new ImageIcon(getClass().getResource("/resource/check.png")));
+            } else {
+                lblRegEstado.setIcon(new ImageIcon(getClass().getResource("/resource/na.png")));
+            }
+            
+            
+            txtRegUsuario.setText(null);
+            txtRegClave1.setText(null);
+            txtRegClave2.setText(null);
+            cboPriviegio.setSelectedIndex(0);
+            
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(AppBlog.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(AppBlog.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            Logger.getLogger(AppBlog.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (TagHijoNotFoundException ex) {
+            Logger.getLogger(AppBlog.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -413,22 +557,35 @@ public class AppBlog extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBorrarEntrada;
     private javax.swing.JButton btnLogin;
+    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JComboBox<String> cboPriviegio;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel lblEstado;
     private javax.swing.JLabel lblEstado1;
     private javax.swing.JLabel lblMensaje;
     private javax.swing.JLabel lblMensaje1;
+    private javax.swing.JLabel lblMensajeRegistro;
+    private javax.swing.JLabel lblRegEstado;
     private javax.swing.JTextField txtEntrada;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JPasswordField txtPass1;
+    private javax.swing.JPasswordField txtRegClave1;
+    private javax.swing.JPasswordField txtRegClave2;
+    private javax.swing.JTextField txtRegUsuario;
     private javax.swing.JTextField txtUser;
     private javax.swing.JTextField txtUser1;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -1,45 +1,43 @@
 <?php
-  require_once"Data.php";
 
-  if(isset($_GET["btnRegistrarNormal"])){
-    $nombreUsuario=$_GET["txtNombreUsuario"];
-    $pass1=$_GET["txtPass1"];
-    $pass2=$_GET["txtPass2"];
-    $idPrivilegio=$_GET["txtIdPrivilegio"];
+
+  if(isset($_GET["nombreUsuario"])){
+    require_once"Data.php";
+    $nombreUsuario=$_GET["nombreUsuario"];
+    $pass1=$_GET["pass1"];
+    $pass2=$_GET["pass2"];
+    $idPrivilegio=$_GET["privilegio"];
     $d =new Data();
     $registro=true;
     $errorPass=false;
-    $existe=$d->verificarUsuario($nombreUsuario);
-
+    $existe=$d->validarUsuario($nombreUsuario);
     if ($existe == 0) {
       $registro=false;
-      echo "<info>";
-      echo "  <mensaje>usuario existe</mensaje>";
-      echo "  <estado>$registro</estado>";
-      echo "</info>";
       if ($pass1==$pass2) {
-        $d->crearUsuarioNormal($nombreUsuario,$pass1,$idPrivilegio);
+        $d->registrarUsuario($nombreUsuario,$pass1,$idPrivilegio);
         $errorPass=true;
         echo "<info>";
-        echo "  <mensaje>claves coinciden</mensaje>";
-        echo "  <estado>$errorPass</estado>";
+        echo "<mensaje>Usuario Registrado con exito</mensaje>";
+        echo "<estado>$errorPass</estado>";
         echo "</info>";
 
       }else {
         echo "<info>";
-        echo "  <mensaje>claves no coinciden</mensaje>";
-        echo "  <estado>$errorPass</estado>";
+        echo "<mensaje>claves no coinciden</mensaje>";
+        echo "<estado>$errorPass</estado>";
         echo "</info>";
       }
     }else {
       echo "<info>";
-      echo "  <mensaje>nombre de usuario ya existe</mensaje>";
-      echo "  <estado>$registro</estado>";
+      echo "<mensaje>nombre de usuario ya existe</mensaje>";
+      echo "<estado>$registro</estado>";
       echo "</info>";
     }
+  }else{
+    echo "<info>";
+    echo "<mensaje>no se encuentran los parametros necesarios</mensaje>";
+    echo "<estado>false</estado>";
+    echo "</info>";
 
-
-  }else {
-    echo "error al retornat registrar";
-
+  }
  ?>

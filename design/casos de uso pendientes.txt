@@ -4,14 +4,13 @@ Entradas				Estado		 Autor
 -Borrar una entrda de blog.............Listo.............Emilio
 -Listar entradas de blog...............Listo.............German
 -Actualizar entrada de blog............Pendiente.........(?)
--Leer una entrada de blog..............Pendiente.........(?)
+-Leer una entrada de blog..............Pendiente.........Gonzalo
 
 
 Usuario					Estado		 Autor
 
--Registrar usuarios normales...........(?)...............Nico
--Registrar usuarios admin..............Pendiente.........(?)
--Validar cuenta usuar..................Listo.............Emilio
+-Registrar usuarios....................Listo.............Nico
+-Validar cuenta usuario................Listo.............Emilio
 -Borrar cuenta usuario.................Listo.............Jose
 -Convertir Usuario a admin.............Listo.............Pia
 -Actualizar usuario....................Pendiente.........(?)

@@ -4,7 +4,7 @@ Entradas				Estado		 Autor
 -Borrar una entrda de blog.............Listo.............Emilio
 -Listar entradas de blog...............Listo.............German
 -Actualizar entrada de blog............Pendiente.........(?)
--Leer una entrada de blog..............Pendiente.........Gonzalo
+-Leer una entrada de blog..............Pendiente.........Nico
 
 
 Usuario					Estado		 Autor

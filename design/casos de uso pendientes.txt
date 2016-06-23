@@ -13,6 +13,6 @@ Usuario					Estado		 Autor
 -Validar cuenta usuario................Listo.............Emilio
 -Borrar cuenta usuario.................Listo.............Jose
 -Convertir Usuario a admin.............Listo.............Pia
--Actualizar usuario....................Pendiente.........(?)
+-Actualizar usuario....................Pendiente.........Jose
 
 

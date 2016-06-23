@@ -615,9 +615,6 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JPasswordField" name="txtActualizarUsuario_PassAdmin">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -699,9 +696,6 @@
                     <Component class="javax.swing.JTextField" name="txtActualizarUsuario_NombreUsuario">
                     </Component>
                     <Component class="javax.swing.JPasswordField" name="txtActualizarUsuario_PassUsuario">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>

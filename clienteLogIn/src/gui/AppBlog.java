@@ -418,8 +418,6 @@ public class AppBlog extends javax.swing.JFrame {
 
         jLabel14.setText("Pass Admin");
 
-        txtActualizarUsuario_PassAdmin.setText("jPasswordField1");
-
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -462,8 +460,6 @@ public class AppBlog extends javax.swing.JFrame {
         jLabel16.setText("Nombre");
 
         jLabel17.setText("Pass");
-
-        txtActualizarUsuario_PassUsuario.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -851,7 +847,15 @@ public class AppBlog extends javax.swing.JFrame {
                 String passUser=txtActualizarUsuario_PassUsuario.getText();
                 
                 String server="http://10.52.7.1/grupo_a/actualizarUsuario.php";
-                ActualizarUsuario actualizar=new ActualizarUsuario(server, id, nombreUser, passAdmin, server, server);
+                ActualizarUsuario actualizar=new 
+                            ActualizarUsuario(
+                                    server, 
+                                    id, 
+                                    nombreAdmin, 
+                                    passAdmin, 
+                                    nombreUser, 
+                                    passUser);
+                //String server, int id, String adminName, String adminPss, String userName, String userPass
                 
                 String url = actualizar.getUrl();
                 

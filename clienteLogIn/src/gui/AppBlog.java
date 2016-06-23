@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 import javax.xml.parsers.ParserConfigurationException;
+import model.ActualizarEntrada;
 import model.ActualizarUsuario;
 import model.BorrarEntrada;
 import model.BorrarUsuario;
@@ -113,6 +114,22 @@ public class AppBlog extends javax.swing.JFrame {
         lblEstadoActualizarUsuario = new javax.swing.JLabel();
         lblMensajeActualizarUsuario = new javax.swing.JLabel();
         btnActualizarUsuario = new javax.swing.JButton();
+        jPanel9 = new javax.swing.JPanel();
+        jPanel10 = new javax.swing.JPanel();
+        txtActualizarEntrada_NombreAdmin = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        txtActualizarEntrada_PassAdmin = new javax.swing.JPasswordField();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        txtActualizarEntrada_IDPublicacion = new javax.swing.JTextField();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        txtActualizarEntrada_TituloEntrada = new javax.swing.JTextField();
+        txtActualizarEntrada_CuerpoEntrada = new javax.swing.JTextField();
+        lblEstadoActualizarEntrada = new javax.swing.JLabel();
+        lblMensajeActualizarEntrada = new javax.swing.JLabel();
+        btnActualizarEntrada = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
@@ -239,14 +256,14 @@ public class AppBlog extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 455, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -374,7 +391,7 @@ public class AppBlog extends javax.swing.JFrame {
                                     .addComponent(txtPassDelete))))
                         .addGap(61, 61, 61)
                         .addComponent(lblEliminarEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 75, Short.MAX_VALUE)))
+                        .addGap(0, 104, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -548,11 +565,164 @@ public class AppBlog extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblMensajeActualizarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnActualizarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                .addComponent(btnActualizarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         jTabbedPane3.addTab("Actualizar usuario", jPanel4);
+
+        jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos admin"));
+
+        txtActualizarEntrada_NombreAdmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtActualizarEntrada_NombreAdminActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("Nombre Admin");
+
+        jLabel19.setText("Pass Admin");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtActualizarEntrada_NombreAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                    .addComponent(txtActualizarEntrada_PassAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtActualizarEntrada_NombreAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(txtActualizarEntrada_PassAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
+        );
+
+        jPanel11.setBorder(javax.swing.BorderFactory.createTitledBorder("Actualizar Usuario"));
+
+        jLabel20.setText("ID Publicación");
+
+        txtActualizarEntrada_IDPublicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtActualizarEntrada_IDPublicacionActionPerformed(evt);
+            }
+        });
+
+        jLabel21.setText("Título:");
+
+        jLabel22.setText("Cuerpo:");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel11Layout.createSequentialGroup()
+                            .addComponent(txtActualizarEntrada_CuerpoEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                            .addContainerGap())
+                        .addGroup(jPanel11Layout.createSequentialGroup()
+                            .addComponent(txtActualizarEntrada_TituloEntrada)
+                            .addContainerGap()))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addComponent(txtActualizarEntrada_IDPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20)
+                    .addComponent(txtActualizarEntrada_IDPublicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(txtActualizarEntrada_TituloEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtActualizarEntrada_CuerpoEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        lblEstadoActualizarEntrada.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEstadoActualizarEntrada.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblEstadoActualizarEntrada.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lblMensajeActualizarEntrada.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        lblMensajeActualizarEntrada.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        btnActualizarEntrada.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnActualizarEntrada.setText("Actualizar Entrada");
+        btnActualizarEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarEntradaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addComponent(lblEstadoActualizarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblMensajeActualizarEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addComponent(btnActualizarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(lblEstadoActualizarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMensajeActualizarEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnActualizarEntrada, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jTabbedPane3.addTab("Actualizar Entrada", jPanel9);
 
         javax.swing.GroupLayout jMenuLayout = new javax.swing.GroupLayout(jMenu.getContentPane());
         jMenu.getContentPane().setLayout(jMenuLayout);
@@ -832,9 +1002,9 @@ public class AppBlog extends javax.swing.JFrame {
                 || txtActualizarUsuario_PassUsuario.getText().equalsIgnoreCase("")
                 ) 
         {
-            lblEliminarUsuario.setText("Error, Rellene el formulario");
-            lblEliminarUsuario.setForeground(Color.red);
-            lblEliminarEstado.setIcon(new ImageIcon(getClass().getResource("/resource/na.png")));
+            lblMensajeActualizarUsuario.setText("Error, Rellene el formulario");
+            lblMensajeActualizarUsuario.setForeground(Color.red);
+            lblMensajeActualizarUsuario.setIcon(new ImageIcon(getClass().getResource("/resource/na.png")));
 
         } else {
             try {
@@ -891,6 +1061,79 @@ public class AppBlog extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnActualizarUsuarioActionPerformed
 
+    private void txtActualizarEntrada_NombreAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtActualizarEntrada_NombreAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtActualizarEntrada_NombreAdminActionPerformed
+
+    private void txtActualizarEntrada_IDPublicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtActualizarEntrada_IDPublicacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtActualizarEntrada_IDPublicacionActionPerformed
+
+    private void btnActualizarEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarEntradaActionPerformed
+if (txtActualizarEntrada_IDPublicacion.getText().equalsIgnoreCase("")
+                || txtActualizarEntrada_NombreAdmin.getText().equalsIgnoreCase("")
+                || txtActualizarEntrada_PassAdmin.getText().equalsIgnoreCase("")
+                || txtActualizarEntrada_TituloEntrada.getText().equalsIgnoreCase("")
+                || txtActualizarEntrada_CuerpoEntrada.getText().equalsIgnoreCase("")
+                ) 
+        {
+            lblMensajeActualizarEntrada.setText("Error: Rellene el formulario");
+            lblMensajeActualizarEntrada.setForeground(Color.red);
+            lblEstadoActualizarUsuario.setIcon(new ImageIcon(getClass().getResource("/resource/na.png")));
+
+        } else {
+            try {
+                int idPublicacion = Integer.parseInt(txtActualizarEntrada_IDPublicacion.getText());                
+                String nombreAdmin = txtActualizarEntrada_NombreAdmin.getText();
+                String passAdmin = txtActualizarEntrada_PassAdmin.getText();
+                
+                String titulo = txtActualizarEntrada_TituloEntrada.getText();
+                String cuerpo = txtActualizarEntrada_CuerpoEntrada.getText();
+                
+                String server = "http://10.52.7.1/grupo_a/actualizarPublicacion.php";
+                ActualizarEntrada nuevaEntrada = new 
+                            ActualizarEntrada(
+                                    server, 
+                                    idPublicacion, 
+                                    nombreAdmin, 
+                                    passAdmin, 
+                                    titulo, 
+                                    cuerpo);
+                
+                String url = nuevaEntrada.getUrl();
+                
+                System.out.println(url);
+                
+                JespXML a = new JespXML(new URL(url));
+                Tag tagInfo = a.leerXML();
+                Tag tagMensaje = tagInfo.getTagHijoByName("mensaje");
+                Tag tagEstado = tagInfo.getTagHijoByName("status");
+
+                String mensaje = tagMensaje.getContenido();
+                String strEstado = tagEstado.getContenido();
+                Boolean estado = Boolean.valueOf(strEstado);
+
+                lblMensajeActualizarEntrada.setText(mensaje);
+
+                if (estado) {
+                    lblEstadoActualizarUsuario.setIcon(new ImageIcon(getClass().getResource("/resource/check.png")));
+                } else {
+                    lblEstadoActualizarEntrada.setIcon(new ImageIcon(getClass().getResource("/resource/na.png")));
+                }
+                            
+            } catch (IOException ex) {
+                Logger.getLogger(AppBlog.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ParserConfigurationException ex) {
+                Logger.getLogger(AppBlog.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SAXException ex) {
+                Logger.getLogger(AppBlog.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (TagHijoNotFoundException ex) {
+                Logger.getLogger(AppBlog.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+    }//GEN-LAST:event_btnActualizarEntradaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -923,6 +1166,7 @@ public class AppBlog extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnActualizarEntrada;
     private javax.swing.JButton btnActualizarUsuario;
     private javax.swing.JButton btnBorrarEntrada1;
     private javax.swing.JButton btnEliminar;
@@ -938,7 +1182,12 @@ public class AppBlog extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -948,6 +1197,8 @@ public class AppBlog extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JFrame jMenu;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -955,19 +1206,27 @@ public class AppBlog extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JLabel lblEliminarEstado;
     private javax.swing.JLabel lblEliminarUsuario;
     private javax.swing.JLabel lblEstado;
     private javax.swing.JLabel lblEstado3;
+    private javax.swing.JLabel lblEstadoActualizarEntrada;
     private javax.swing.JLabel lblEstadoActualizarUsuario;
     private javax.swing.JLabel lblMensaje;
     private javax.swing.JLabel lblMensaje3;
+    private javax.swing.JLabel lblMensajeActualizarEntrada;
     private javax.swing.JLabel lblMensajeActualizarUsuario;
     private javax.swing.JLabel lblMensajeRegistro;
     private javax.swing.JLabel lblRegEstado;
     private javax.swing.JTable tabEntradas;
+    private javax.swing.JTextField txtActualizarEntrada_CuerpoEntrada;
+    private javax.swing.JTextField txtActualizarEntrada_IDPublicacion;
+    private javax.swing.JTextField txtActualizarEntrada_NombreAdmin;
+    private javax.swing.JPasswordField txtActualizarEntrada_PassAdmin;
+    private javax.swing.JTextField txtActualizarEntrada_TituloEntrada;
     private javax.swing.JTextField txtActualizarUsuario_ID;
     private javax.swing.JTextField txtActualizarUsuario_NombreAdmin;
     private javax.swing.JTextField txtActualizarUsuario_NombreUsuario;
